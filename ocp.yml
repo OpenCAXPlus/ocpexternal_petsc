@@ -21,13 +21,13 @@ scripts: # some scripts that developers may run
   - id: check
     run: scripts/check
     arguments: ["@version","@uid"]
-dependencies: # some dependencies that will be later referred by the configurations
-  - id: "lapack" # id is how the dependencies can be later referred
-    uid: "lapack" # uid is the unique identifier that we use to locate the tar.xz file 
-    type: external #
-    default: 
-      version: "3.11.0" # you need to check the ocp.yml file for available versions
-      configuration: "default" # check the corresponding ocp.yml file for available configurations 
+# dependencies: # some dependencies that will be later referred by the configurations
+#   - id: "lapack" # id is how the dependencies can be later referred
+#     uid: "lapack" # uid is the unique identifier that we use to locate the tar.xz file 
+#     type: external #
+#     default: 
+#       version: "3.11.0" # you need to check the ocp.yml file for available versions
+#       configuration: "default" # check the corresponding ocp.yml file for available configurations 
 configurations: # list of configs that is referred in by the versions
   - id: "default" # if no dependencies are listed, then use the default value
     run: configurations/default # must have a run to specify which script to run

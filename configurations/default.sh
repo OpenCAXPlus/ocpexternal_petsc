@@ -17,8 +17,7 @@ use_cpu=$(($ncpu-1))
 cd $source_dir
 ./configure --prefix=${install_dir}  --with-cc=${CC} \
     --with-cxx=${CXX} --with-fc=gfortran --with-petsc4py=1 --download-mpi4py \
-    --with-blas-lib=${OCP_CACHE}/lapack/3.11.0/install/lib/libblas.a \
-    --with-lapack-lib=${OCP_CACHE}/lapack/3.11.0/install/lib/liblapack.a \
+    --download-openblas \
     --download-mpich --download-metis --download-parmetis --download-suitesparse \
     --download-mumps --download-hypre --download-slepc --download-eigen \
     --download-scalapack --download-superlu --download-fftw

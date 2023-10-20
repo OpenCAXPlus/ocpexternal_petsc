@@ -10,7 +10,7 @@ versions: # list of all versions, to make this easier for human to read there sh
   - id: "3.20.0" # the version number this will be used in the tar.xz file's name
     default: "default" # override the default configurations
     scripts:  ["prepare", "publish", "check"] # override the default scripts
-    configurations: ["build","new_build"]
+    configurations: ["default"]
 scripts: # some scripts that developers may run
   - id: prepare # id is used as a reference for others to find this script
     run: scripts/prepare # run gives you the script to run (without extension)

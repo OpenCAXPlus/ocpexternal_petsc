@@ -46,3 +46,9 @@ Read our tutorial or watch the tutorial video (both coming soon).
 ## The ocp.yml file
 
 For explanation of the ocp.yml file, please read the comment in itself and check the ocp.schema.json file for all the rules.
+
+## Prepare
+```
+sudo apt install python3 python3-pip
+pip3 install numpy
+```

@@ -3,7 +3,7 @@
 # The source code must be in ocp/external/external_id/version/source folder
 # get command line arguments
 version=${1}
-external_id=${2}
+external_id=${2:-petsc}
 
 # prepare necessary variables
 url="https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-$version.tar.gz"

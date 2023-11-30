@@ -2,7 +2,7 @@
 # You should modify this script to prepare the folder structure for external project source codes
 # The source code must be in ocp/external/external_id/version/source folder
 # get command line arguments
-version=${1}
+version=${1:-3.20.1}
 external_id=${2:-petsc}
 download=${3:-"nodownload"}
 # prepare necessary variables

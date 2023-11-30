@@ -13,7 +13,7 @@ install_dir="$script_dir/../install/$OCP_COMPILER/$config"
 # use_cpu=$(($ncpu-1))
 
 cd $source_dir
-CC=$OCP_CC CXX=$OCP_CXX ./configure --prefix=${install_dir} \
+./configure --with-cc=$OCP_CC --with-cxx=$OCP_CXX --with-fc=$OCP_FC  --prefix=${install_dir} \
     --with-cxx=${CXX} --with-fc=gfortran --with-petsc4py=1 --download-mpi4py \
     --download-openblas \
     --download-mpich --download-metis --download-parmetis --download-suitesparse \

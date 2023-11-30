@@ -16,7 +16,9 @@ install_dir="$script_dir/../install/$OCP_COMPILER/$config"
 mkdir -p $build_dir
 cp -r $source_dir/* $build_dir
 cd $build_dir
-CC=$OCP_CC CXX=$OCP_CXX ./configure --prefix=${install_dir} --with-fortran-bindings=0 \
+ ./configure --with-cc=$OCP_CC --with-cxx=$OCP_CXX --with-fc=$OCP_FC --prefix=${install_dir} \
+        --with-64-bit-indices \
+        --with-fortran-bindings=0 \
         --with-hypre-dir=$OCP_HYPRE_DIR \
         --with-debugging=0 \
         COPTFLAGS="-O3" \

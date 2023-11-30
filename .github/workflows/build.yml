@@ -8,11 +8,11 @@ on:
       id:
         description: "Software id"
         required: true
-        default: "spdlog"
+        default: "petsc"
       version:
         description: "Software version"
         required: true
-        default: "1.11.0"
+        default: "3.20.1"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,5 +25,5 @@ jobs:
         uses: actions/checkout@v3
       - name: Prepare and Install
         run: |
-          source scripts/prepare.sh ${{ github.event.inputs.version }} ${{ github.event.inputs.id }}
+          source scripts/prepare.sh ${{ github.event.inputs.version }} ${{ github.event.inputs.id }} download
           source ocp/external/${{ github.event.inputs.id }}/${{ github.event.inputs.version }}/configurations/default.sh

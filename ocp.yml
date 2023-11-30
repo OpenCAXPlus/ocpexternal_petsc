@@ -10,7 +10,11 @@ versions: # list of all versions, to make this easier for human to read there sh
   - id: "3.20.0" # the version number this will be used in the tar.xz file's name
     default: "default" # override the default configurations
     scripts:  ["prepare", "publish", "check"] # override the default scripts
-    configurations: ["default"]
+    configurations: ["default","int64"]
+  - id: "3.19.3" # the version number this will be used in the tar.xz file's name
+    default: "int64" # override the default configurations
+    scripts:  ["prepare", "publish", "check"] # override the default scripts
+    configurations: ["default","int64"]
 scripts: # some scripts that developers may run
   - id: prepare # id is used as a reference for others to find this script
     run: scripts/prepare # run gives you the script to run (without extension)
@@ -32,3 +36,19 @@ configurations: # list of configs that is referred in by the versions
   - id: "default" # if no dependencies are listed, then use the default value
     run: configurations/default # must have a run to specify which script to run
     arguments: ["@version","@uid"]
+  - id: "int64" # if no dependencies are listed, then use the default value
+    run: configurations/int64 # must have a run to specify which script to run
+    arguments: ["@version","@uid"]
+environment:
+  - id: "gnu"
+    variables:
+      - id: "CC"
+        value: "gcc"
+      - id: "CXX"
+        value: "g++"
+  - id: "intel"
+    variables:
+      - id: "CC"
+        value: "icc"
+      - id: "CXX"
+        value: "icpc"

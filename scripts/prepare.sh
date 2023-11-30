@@ -4,7 +4,7 @@
 # get command line arguments
 version=${1}
 external_id=${2:-petsc}
-clean=${3:-clean}
+download=${3:-"nodownload"}
 # prepare necessary variables
 url="https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-$version.tar.gz"
 dir="ocp/external/$external_id/$version/source"
@@ -15,7 +15,7 @@ cd $script_dir/..
 
 # start the script
 # if the flag is set, remove the previous tar.gz file
-if [ "$clean" == "clean" ]; then
+if [ "$download" == "download" ]; then
     rm -rf *.tar.gz
     wget -O $gz_file $url
     echo "Download $external_id $version"
